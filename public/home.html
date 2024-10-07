@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="bg-[#7e60bf]">
+<div id="hero" class="w-full h-full flex">
+    <nav class="p-7 bg-[#433878] w-52 h-full text-center ">
+        <div>
+            <div class="nav-1 h-full border-b-2 pb-5 border-b-gray-600">
+                <img src="https://images.unsplash.com/photo-1726711340699-952d47133b21?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="userimage" class="w-32 h-32 rounded-full ml-3 mb-8">
+                <h4 class="mb-5">Username</h4>
+                <button class="bg-[#433090] p-1 rounded-lg hover:bg-[#ffe1ff]"><a href="#">Logout</a></button>
+            </div>
+            <div class=" nav-2">
+                <h5 class="mb-4 mt-3">Name</h5>
+                <h5 class="mb-4">Address,xyz street,pin-777999</h5>
+                <h5 class="mb-10">Email@gmail.com</h5>
+                <button class="bg-[#433090] p-1 rounded-lg hover:bg-[#ffe1ff]"><a href="#">Edit Profile</a></button>
+            </div>
+        
+        
+    </nav>
+    <main class="w-full h-full">
+    <div class="px-10 h-10 bg-[#433878] flex justify-between items-center mb-16">
+        <h1 class=" p-1 text-2xl">Admin</h1>
+        <h3>User Management</h3>
+    </div>
+    <div class="ml-16">
+    <h1 class="text-2xl mb-16">RISE PVT LTD</h1>
+</div>
+<div class="my-10 ml-16"><h3>No Of Users 0001</h3></div>
+    <div class="flex  justify-center w-full  max-h-48 overflow-y-scroll" >
+        
+        <table class="caption-top bg-[#ffe1ff]  ">
+            <tr class="">
+                <th class="p-2 ">ID</th>
+                <th class="p-2 ">Employee Name</th>
+                <th class="p-2 ">Title</th>
+                <th class="p-2 ">Role</th>
+                <th class="p-2 ">Modify Access</th>
+                <th class="p-2 ">Remove User</th>
+            </tr>
+            <tr class="border-t-2 border-slate-700">
+                <td class="p-3 ">1</td>
+                <td class="p-3 ">1</td>
+                <td class="p-3 ">1</td>
+                <td class="p-3 ">1</td>
+                <td class="p-3 "><button class="text-blue-800 hover:text-blue-500" onclick="openModal()">Edit</button ></td>
+                <td class="p-3 " onclick="openWarning()"><button class="text-red-700 hover:text-red-500">Remove</button></td>
+            </tr>
+        </table>
+    </div>
+    <button class="float-right mr-28 mt-10 text-green-950 hover:text-green-800" onclick="openAddUser()">Add User</button>
+</main>
+    
+
+
+
+</div>
+<div id="editModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50 ">
+    <div class="bg-[#473C70] p-6 rounded-lg shadow-lg w-96">
+        <h2 class="text-xl font-bold mb-4">Edit User</h2>
+        <h2 class="text-lg font-bold mb-4">User Name</h2>
+        <form>
+        <div class="flex justify-between mb-3">
+            <label class="block ">Title:</label>
+        <div class="flex flex-col ">
+            <button type="button" id="iconBg" class="relative mr-10 w-52 text-lg border-2 bg-slate-500 p-1 rounded-xl transition-colors duration-700 ease-in-out" onclick="rotateIcon()">Choose Title 
+                <span id="rotate" class="icon-container inline-block transition-transform duration-700 ease-in-out "><i class="ri-arrow-left-line"></i></span>
+            </button>
+            <div id="options" class="absolute bottom-20 w-52 h-56 z-10 bg-slate-200 px-4 text-lg rounded-lg opacity-0 hidden transition-all duration-700 ease-in-out">
+                <div class="w-full h-full flex flex-col  justify-evenly" >
+                    <button class=" w-full text-left border-b-2">Doctor</button>
+                    <button class=" w-full text-left border-b-2">Nurse</button>
+                    <button class=" w-full text-left border-b-2">Receptationist</button>
+                    <button class=" w-full text-left border-b-2" >Pharamasist</button>
+                    <button class=" w-full text-left border-b-2">MLT</button>
+                    <button class=" w-full text-left border-b-2">Transport Manager</button>
+                    <button class=" w-full text-left">Billing Specialist</button>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+        <div class="flex items-center justify-between" >
+            <label class="block mb-2">Role:</label>
+            <label> Read <input type="radio" class="w-full mb-4 p-2 border border-gray-300 rounded-lg"></label>
+            <label > Modify <input type="radio" class="w-full mb-4 p-2 border border-gray-300 rounded-lg"></label>
+        </div>
+            <div class="flex ">
+                <button type="button" class="bg-red-600 text-white px-4 py-2 rounded-lg mr-2" onclick="closeModal()">Cancel</button>
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+<div id="remove" class="fixed bg-gray-900 inset-0 bg-opacity-50  hidden flex-col justify-between items-center z-50 ">
+    <div class="bg-white p-10 rounded-lg shadow-lg w-1/2">
+    <h1 class="mb-10 text-center">Are You Sure You Want To Remove This User ABC</h1>
+    <div class="flex justify-between items-center ">
+        <button type="button" class="bg-gray-600 text-white px-4 py-2 rounded-lg ml-20" onclick="closeWarning()">Cancel</button>
+        <button type="submit" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg mr-20" >Remove</button>
+    </div>
+</div>
+</div>
+   
+
+<div id="addUser" class="w-full h-screen fixed bg-gray-900 inset-0 bg-opacity-50  hidden justify-center items-center z-50 ">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-1/2">
+        <h1 class="text-center text-2xl">Add User</h1>
+        <form action="">
+            <label for="name" class="block m-2">Employee Name:</label>
+            <input type="text" class="w-full mb-4 p-2 border border-gray-300 rounded-lg"required>
+            <label class="block mb-2">Title:</label>
+            <input type="text" class="w-full mb-4 p-2 border border-gray-300 rounded-lg" required>
+            <div class="flex items-center justify-between">
+                <label class="block mb-2">Role:</label>
+                <label> Read <input type="radio" class="w-full mb-4 p-2 border border-gray-300 rounded-lg"></label>
+                <label > Modify <input type="radio" class="w-full mb-4 p-2 border border-gray-300 rounded-lg"></label>
+            </div>
+            <div class="w-full items-center justify-center"></div>
+                <button type="button" class="bg-red-600 text-white px-4 py-2 rounded-lg mr-2" onclick="closeAddUser()">Cancel</button>
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="./js/script.js"></script>
+</body>
+</html>
